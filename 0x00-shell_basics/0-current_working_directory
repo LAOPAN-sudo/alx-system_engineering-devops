@@ -1,3 +1,2 @@
 #!/bin/bash
-echo $(realpath $(pwd)) # Print the absolute path name of the current working
-
+echo $(realpath $(pwd))
