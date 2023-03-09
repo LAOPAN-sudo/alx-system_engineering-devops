@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1Ap | sed 's/:$//' | tr '\n' ',' | sed 's/^/.\//; s/,$/\n/'
+ls -1Ap . .. | sort -d | tr '\n' ',' | sed 's/,$/\n/' | tr -d ':'
