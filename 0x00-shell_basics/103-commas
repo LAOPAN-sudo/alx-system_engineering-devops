@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1Ap . .. | sort -d | tr '\n' ',' | sed 's/,$/\n/' | tr -d ':'
+ls -ma -F --file-type
