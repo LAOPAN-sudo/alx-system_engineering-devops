@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Use ifconfig to get active IPv4 IPs and filter to display only IPv4 addresses
+ifconfig | grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b'
