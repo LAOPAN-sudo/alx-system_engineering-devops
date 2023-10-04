@@ -1,14 +1,5 @@
 #!/bin/bash
 
 # Display listening ports with PID and program name
-netstat -tuln | awk '/^tcp/ {print $4, $6}' | awk -F ':' '{print $2}' | sort -n | uniq | while read -r port; do
-  pid=$(lsof -i :$port -t)
-  program=$(ps -p $pid -o comm=)
-  echo "tcp $port - LISTEN $pid/$program"
-done
 
-netstat -uln | awk '/^udp/ {print $4}' | awk -F ':' '{print $2}' | sort -n | uniq | while read -r port; do
-  pid=$(lsof -i :$port -t)
-  program=$(ps -p $pid -o comm=)
-  echo "udp $port - $pid/$program"
-done
+netstat -l --program
